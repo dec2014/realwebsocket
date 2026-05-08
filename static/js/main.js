@@ -110,18 +110,21 @@ async function JoinChatRoom(){
     data.append('client',chat_name)
     data.append('url',chatWindow)
 
-    await fetch(`http://127.0.0.1:8000/create-room/${chatRoomUUID}/`,{
-        method:'POST',
-        headers:{
-            'X-CSRFToken':getCookie('csrftoken')
+    await fetch(`${window.location.origin}/create-room/${chatRoomUUID}/`, {
+    method: 'POST',
 
-        },
-        body:data
-    }).then(function(res){
-        return res.json()
-    }).then(function(data){
-        console.log('data',data)
-    })
+    headers: {
+        'X-CSRFToken': getCookie('csrftoken')
+    },
+
+    body: data
+})
+.then(function(res) {
+    return res.json()
+})
+.then(function(data) {
+    console.log('data', data)
+})
 
     chatSocket=new WebSocket(`wss://${window.location.host}/ws/${chatRoomUUID}/`)
     chatSocket.onmessage=function(e){
