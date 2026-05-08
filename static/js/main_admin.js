@@ -76,7 +76,7 @@ function onChatMesssage(data){
 
 }
 
-chatSocket=new WebSocket(`ws://${window.location.host}/ws/${chatRoom}/`)
+chatSocket=new WebSocket(`wss://${window.location.host}/ws/${chatRoom}/`)
     chatSocket.onmessage=function(e){
         console.log('onMessage')
         onChatMesssage(JSON.parse(e.data))

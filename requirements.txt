@@ -8,6 +8,7 @@ constantly==15.1.0
 cryptography==40.0.2
 daphne==4.0.0
 Django==4.2.1
+djangorestframework==3.16.1
 hyperlink==21.0.0
 idna==3.4
 incremental==22.10.0
@@ -21,4 +22,6 @@ sqlparse==0.4.4
 Twisted==22.10.0
 txaio==23.1.1
 typing_extensions==4.5.0
+whitenoise==6.9.0
 zope.interface==6.0
+python-dotenv==1.1.1
